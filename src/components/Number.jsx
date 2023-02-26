@@ -1,8 +1,10 @@
 export const num = 0;
 
-function Number() {
+function Number({counter}) {
    return(
-      <span className="main__number">{num}</span>
+      <span className="main__number">
+         {counter}
+      </span>
    )
 }
 
