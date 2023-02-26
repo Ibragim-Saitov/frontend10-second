@@ -2,35 +2,26 @@
 import images from '../images/refresh.png';
 import Logo from './Logo';
 
-const buttons = [
-   {
-      sign: '+',
-      id: 1
-   },
-   {
-      sign: <img src={images} alt="Сброс" />,
-      id: 2
-   },
-   {
-      sign: '-',
-      id: 3
-   },
-]
+function Buttons({counter, setCounter}){
+   function plus(){
+      setCounter(counter + 1)
+   }
 
-function Buttons(){
+   function minus(){
+   counter > 1 ? setCounter(counter - 1) : setCounter(0);
+   }
+   
+   
+   function reset() {
+      setCounter(0)
+   }
+   console.log(0);
    return (
       <div className='main__buttons'>
-      {
-         buttons.map((buttons) => {
-         return(
-            <button className='main__btn' key={buttons.id}>
-               <span>{buttons.sign}</span>
-            </button>
-         )
-      })
-   }
-   </div>
+      <button className='main__btn' onClick={plus}>+</button>
+      <button className='main__btn' onClick={reset}><img src={images} alt="Сброс" /></button>
+      <button className='main__btn' onClick={minus}>-</button>     
+      </div>
    )
 }
-
 export default Buttons;
