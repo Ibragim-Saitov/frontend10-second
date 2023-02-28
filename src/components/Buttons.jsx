@@ -25,3 +25,4 @@ function Buttons({counter, setCounter}){
    )
 }
 export default Buttons;
+
