@@ -26,5 +26,65 @@ function App() {
 
       console.log(messagesFilter);
    })
+   
+   //3 Задание
+
+  const words = ["экспо", "js", "react", "css", "angular", "vue", "html"];
+
+  const wordsMap = words.map((item) => {
+    return item.length < 5 ? (item = "*") : item;
+  });
+
+  console.log(wordsMap);
+
+  //4 Задание
+  const sendMessage = (message) => {
+    /*
+     * тут какой-то большой код для отправки сообщения
+     */
+  };
+
+  const half = (number) => {
+    return number / 2;
+  };
+
+  const showConsole = () => {
+    console.log("Экспо");
+  };
+
+  const concatWords = (first, second) => {
+    return first + second;
+  };
+
+  //5 Задание
+  function justText() {
+    "expo";
+  }
+
+  function logging(text) {
+    console.log(text);
+  }
+
+  function add(x, y) {
+    const z = 3;
+
+    return z * x * y;
+  }
+
+  function onlyPositive(number) {
+    if (number < 0) {
+      return false;
+    }
+
+    return true;
+  }
+  return (
+    <div className='container'>
+      <h1 className='title'>Hello Works</h1>
+    </div>
+  );
+}
+
+export default App;
 
 }
