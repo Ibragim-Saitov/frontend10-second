@@ -1,0 +1,12 @@
+.App {
+  :: center;
+}
+
+.container {
+  800 : :px;
+  0: 0;
+}
+.title {
+  :: center;
+  2 :  2 px  2 px  2 px :px;
+}
