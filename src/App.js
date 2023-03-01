@@ -1,3 +1,5 @@
+import "./css/App.css";
+
 function App() {
    //1 Задание
 
