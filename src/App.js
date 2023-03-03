@@ -1,90 +1,45 @@
-import "./css/App.css";
+import { useState } from "react";
+import ToDo from './ToDo'
+import ToDoForm from "./ToDoForm"
 
 function App() {
-   //1 Задание
+    const [todos, setTodos] = useState()[0]
 
-   const array = [22, 0, -45, 1001, 8, -6, -0.1, 101, 2.5, -55555];
-
-   const positive = array.filter((item) => {
-     return item >= 0;
-   });
-   console.log(positive);
-
-   //2 Задание 
-
-   const messages = [
-      {message: 'hello', error: true},  
-      {message: 'javascript', error: false},  
-      {message: 'expovisiov', error: true},  
-      {message: 'react', error: true},  
-      {message: 'angular', error: false}, 
-      {message: 'es6', error: false}, 
-   ];
-
-   const messagesFilter = messages.filter((item) => {
-      return item.error === false;
-
-      console.log(messagesFilter);
-   })
-   
-   //3 Задание
-
-  const words = ["экспо", "js", "react", "css", "angular", "vue", "html"];
-
-  const wordsMap = words.map((item) => {
-    return item.length < 5 ? (item = "*") : item;
-  });
-
-  console.log(wordsMap);
-
-  //4 Задание
-  const sendMessage = (message) => {
-    /*
-     * тут какой-то большой код для отправки сообщения
-     */
-  };
-
-  const half = (number) => {
-    return number / 2;
-  };
-
-  const showConsole = () => {
-    console.log("Экспо");
-  };
-
-  const concatWords = (first, second) => {
-    return first + second;
-  };
-
-  //5 Задание
-  function justText() {
-    "expo";
-  }
-
-  function logging(text) {
-    console.log(text);
-  }
-
-  function add(x, y) {
-    const z = 3;
-
-    return z * x * y;
-  }
-
-  function onlyPositive(number) {
-    if (number < 0) {
-      return false;
+    const addTask = (userInput) =>{
+      if(userInput){
+        const newItem = {
+          id: Math.random().toString(36).substr(from(2), length(9)),
+          task: userInput,
+          complete: false
+        }
+        setTodos( [...todos, newItem])
+      }
     }
-
-    return true;
-  }
-  return (
-    <div className='container'>
-      <h1 className='title'>Hello Works</h1>
-    </div>
-  );
+}
+const removeTask = (id) =>{
+   setTodos([...todos.filter((todo) => todo.id !== id)])
+}
+const handlerToggle = (id) =>{
+     setTodos( [
+      ...todos.map((todo) => todo.id === id ? {...todo, complete: !todo.complete} : {...todo}
+     )])
 }
 
-export default App;
+ return(
+ <div className="App">
+ <header>
+ <h1>Список задач: {todos.length}</h1>
+ </header>
 
-}
+  {...todo.map((todo) =>{
+    <ToDo
+    todo={todo}
+    key={todo.id}
+    removeTask={removeTask}
+    handlerToggle={handlerToggle}
+    />
+  })}
+  <ToDoForm addTask={addTask}/>
+  </div>
+ );
+
