@@ -1,6 +1,6 @@
 import { useState } from "react";
-import ToDo from "./components/ToDo";
-import ToDoForms from "./components/ToDoForms";
+import ToDo from "./ToDo";
+import ToDoForms from "./ToDoForms";
 
 
 function App() {
