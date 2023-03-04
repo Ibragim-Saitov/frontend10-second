@@ -1,4 +1,4 @@
-import removeImg from '../src/images/remove.png'
+import removeImg from '../src/remove.png'
 
 function ToDo({todo, removeTask, handlerToggle}) {
     return (
