@@ -1,4 +1,4 @@
-import del from '../img/delete.png';
+import del from '../images/remove.png';
 
 function ToDo({todo, removeTask, handleToggle}) {
    
