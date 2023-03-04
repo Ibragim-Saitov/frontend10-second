@@ -42,4 +42,3 @@ const handlerToggle = (id) =>{
   <ToDoForm addTask={addTask}/>
   </div>
  );
-
