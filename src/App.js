@@ -1,42 +1,56 @@
 import { useState } from "react";
-import ToDo from ".components/ToDo.jsx";
-import ToDoForms from ".components/ToDoForm.jsx";
-
+import ToDo from './ToDo';
+import ToDoForm from './ToDoForm';
 
 function App() {
-  const [todos, setTodos] = useState([]);
-  const addTask = (input) => {
-    if(input) {
+  const [todos, setTodos] = useState([])
+
+  const addTask = (useInput) =>{
+    if(useInput){
       const newItem = {
-        id: Math.random().toString(36).substr(2, 9),
-        task: input,
-        complete: false,
+        id: Math.random().toString(36).substr(4, 9),
+        task: useInput,
+        complete: false
       }
-      setTodos([...todos, newItem]);
-    }
-  }
-  const removeTask = (id) => {
-    setTodos([...todos.filter(todo => todo.id !== id)])
-  }
-  const handleToggle = (id) => {
-    setTodos([
-      ...todos.map((todo) => 
-        todo.id === id ? {...todo, complete: !todo.complete} : {...todo}
-    )
-    ])
+      setTodos([...todos, newItem])
+
+    } 
+
   }
 
+  const removeTask = (id) =>{
+    setTodos([...todos.filter((todo) => todo.id !== id)])
+  }
+
+  const handlerToggle = (id) =>{
+    setTodos([
+      ...todos.map((todo) => todo.id === id ? {...todo, complete: !todo.complete} : {...todo})
+    ])
+}
+
   return (
-    <main className="flex flex-col items-center">
-      {console.log(todos)}
-    <h1 className="text-center text-sky-300 font-bold text-[32px] sm:mt-[70px] mt-10 pb-3 border-b-2 border-gray-200 sm:w-[415px] inline-block">Количество задач:{todos.length}</h1>
-    {todos.map((todo) => {
-      return (
-        <ToDo key={todo.id} todo = {todo} removeTask = {removeTask} handleToggle = {handleToggle}/>
+    <div className="App">
+    <header>
+      <h1>Список задач:{todos.length} </h1>
+    </header>
+
+    {todos.map((todo) =>{
+      return(
+        <ToDo
+           todo={todo}
+           key={todo.id}
+           removeTask={removeTask}
+           handlerToggle={handlerToggle}
+        />
+
       )
     })}
-    <ToDoForms addTask = {addTask}/>
-    </main>
+
+    <ToDoForm addTask={addTask}/>
+
+
+
+    </div>
   );
 }
 

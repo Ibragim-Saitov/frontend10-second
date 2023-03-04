@@ -1,0 +1,44 @@
+.App{
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+    font-family: 'Roboto', serif;
+}
+
+body{
+    background-color: #252525;
+}
+
+.App .item-todo {
+    padding: 14px 0;
+    text-align: left;
+    margin-top: 15px;
+    width: 100%;
+    color:#fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;justify-content: space-between;
+}
+
+.App .item-todo .item-text {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.App input {
+    width: 100%;
+    padding: 14px 32px 14px 0px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 24px;
+    color: white;
+}
+.App form{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
