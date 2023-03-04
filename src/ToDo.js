@@ -9,7 +9,7 @@ function ToDo({todo, removeTask, handlerToggle}) {
         {todo.task}
     </div>
     <div onClick={() => removeTask(todo.id)}>
-        <img src={removeImg} alt=""/>
+        <img src={remove.png} alt=""/>
     </div>
   </div>
     )
