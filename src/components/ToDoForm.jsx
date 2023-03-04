@@ -1,5 +1,5 @@
 import { useState } from "react";
-import add from '../img/add.png';
+import add from '../images/group.png';
 
 function ToDoForms({addTask}) {
    const [input, setInput] = useState('');
